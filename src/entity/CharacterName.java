@@ -1,4 +1,4 @@
-package gameCharacter.entity;
+package entity;
 
 public class CharacterName {
 	private long characterNameId;

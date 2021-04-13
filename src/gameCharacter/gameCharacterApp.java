@@ -1,10 +1,17 @@
-package gameCharacter;
+package GameCharacter;
 
-public class gameCharacterApp {
+import java.sql.SQLException;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class GameCharacterApp {
 
-	}
+    public static void main(String[] args) throws SQLException {
+
+
+        GameCharacterMenu menu = new GameCharacterMenu();
+
+        menu.start();
+
+
+    }
 
 }

@@ -1,4 +1,4 @@
-package gameCharacter.Dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import gameCharacter.entity.CharacterName;
+
+import entity.CharacterName;
 
 
 public class characterNameDAO {
@@ -31,7 +32,7 @@ public class characterNameDAO {
 			connection.close();
 		}
 	}
-		public List<CharacterName> fetchCharacterName() throws SQLException{
+		public List<CharacterName> getCharacterName() throws SQLException{
 			String sql = "SELECT * FROM Character_Name";
 			Connection connection = null;
 			PreparedStatement statement = null;
@@ -64,7 +65,7 @@ public class characterNameDAO {
 			}
 			
 	}
-		public void modifyCharacterName(String firstName, String lastName, long id) throws SQLException {
+		public void updateCharacterName(String firstName, String lastName, long id) throws SQLException {
 			String sql = "UPDATE Character_Name SET name = ? WHERE Character_NameId = ?";
 			Connection connection = null;
 			PreparedStatement statement = null;
@@ -72,7 +73,7 @@ public class characterNameDAO {
 		try {
 			connection = DbConnection.getInstance().getConnection();
 			statement = connection.prepareStatement(sql);
-			statement.setString(1, firstName);  //are the number right?
+			statement.setString(1, firstName); 
 			statement.setString(2, lastName);
 			statement.setLong(3, id);
 			
